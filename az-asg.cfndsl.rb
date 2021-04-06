@@ -102,13 +102,6 @@ CloudFormation do
    
     AutoScaling_AutoScalingGroup(:"AutoScaleGroup#{az}") {
       Condition(:"CreateAvailabilityZone#{az}")
-      CreationPolicy(:AutoScalingCreationPolicy, {
-        "MinSuccessfulInstancesPercent" => asg_create_policy['min_successful']
-      })
-      CreationPolicy(:ResourceSignal, {
-        "Count" => asg_create_policy['count'],
-        "Timeout" => asg_create_policy['timeout']
-      })
       UpdatePolicy(:AutoScalingRollingUpdate, {
         "MinInstancesInService" => asg_update_policy['min'],
         "MaxBatchSize"          => asg_update_policy['batch_size'],

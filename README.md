@@ -32,17 +32,6 @@ Determines the maximum amount of availability zones this component can create an
 max_availability_zones: 3
 ```
 
-### AutoScaling Creation Policy
-
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html
-
-```yaml
-asg_create_policy:
-  min_successful: 100
-  count: 1
-  timeout: PT10M
-```
-
 ### AutoScaling Update Policy
 
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
