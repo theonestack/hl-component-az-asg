@@ -13,8 +13,7 @@ CfhighlanderTemplate do
 
     ComponentParam 'AvailabilityZones', max_availability_zones, 
       allowedValues: (1..max_availability_zones).to_a,
-      description: 'Set the availability zone count for the autoscaling groups',
-      isGlobal: true
+      description: 'Set the availability zone count for the autoscaling groups'
 
     ComponentParam 'VPCId', type: 'AWS::EC2::VPC::Id'
     ComponentParam 'KeyPair', ''
