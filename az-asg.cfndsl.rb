@@ -66,7 +66,7 @@ CloudFormation do
         { ResourceType: 'instance', Tags: asg_instance_tags },
         { ResourceType: 'volume', Tags: asg_instance_tags }
       ],
-      UserData: FnBase64(FnSub(instance_userdata)),
+      UserData: FnBase64(FnSub(instance_userdata, {AZId: az})),
       IamInstanceProfile: { Name: Ref(:InstanceProfile) },
       KeyName: FnIf(:KeyPairSet, Ref(:KeyPair), Ref('AWS::NoValue')),
       ImageId: Ref(:Ami),
