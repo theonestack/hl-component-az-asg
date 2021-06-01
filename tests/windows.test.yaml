@@ -1,0 +1,6 @@
+test_metadata:
+  type: config
+  name: windows
+  description: test windows AMI configuration
+
+operating_system: windows
