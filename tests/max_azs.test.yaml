@@ -1,0 +1,6 @@
+test_metadata:
+  type: config
+  name: max_azs
+  description: test with a single availability zone
+
+max_availability_zones: 1
