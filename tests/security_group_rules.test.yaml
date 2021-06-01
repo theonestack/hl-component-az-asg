@@ -1,0 +1,18 @@
+test_metadata:
+  type: config
+  name: security_group_rules
+  description: test security group rule config
+
+security_group_rules:
+  ingress:
+    - from: 8080
+      ip: 10.0.0.0/8
+      desc: ingress from loadbalancer
+  egress:
+    - from: 443
+      ip: 0.0.0.0/0
+      desc: outbound https calls to external sources
+    - from: 49152
+      to: 65535
+      ip: 0.0.0.0/0
+      desc: outbound range for ephemeral ports

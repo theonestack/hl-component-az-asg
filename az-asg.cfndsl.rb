@@ -10,7 +10,7 @@ CloudFormation do
   Condition(:KeyPairSet, FnNot(FnEquals(Ref(:KeyPair), '')))
 
   ip_blocks = external_parameters.fetch(:ip_blocks, {})
-  security_group_rules = external_parameters.fetch(:external_parameters, {})
+  security_group_rules = external_parameters.fetch(:security_group_rules, {})
 
   EC2_SecurityGroup(:SecurityGroup) { 
     VpcId Ref(:VPCId)
